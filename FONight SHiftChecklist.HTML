@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front Office Night Checklist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            background-color: #e6ffe6;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 10px;
+        }
+        .top-section, .footer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .top-section label, .footer-section label {
+            margin-top: 5px;
+        }
+        .checklist {
+            margin-top: 20px;
+        }
+        .checklist h3 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .checklist div {
+            margin-bottom: 10px;
+        }
+        .actions {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .actions button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .actions button:hover {
+            background-color: #45a049;
+        }
+        .remarks, .handover-section {
+            margin-top: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+        }
+        @media (min-width: 600px) {
+            .top-section, .footer-section {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="capture-area">
+
+        <h1>Kasara Jungle Resort</h1>
+        <h2>Front Office Night Shift Checklist</h2>
+
+        <div class="top-section">
+            <div>
+                <label for="name">Prepared By:</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="date">Date:</label>
+                <input type="text" id="date" readonly>
+            </div>
+            <div>
+                <label for="time">Time:</label>
+                <input type="text" id="time" readonly>
+            </div>
+        </div>
+
+        <div class="checklist">
+            <div>
+                <input type="checkbox" id="handover_correct"> <label for="handover_correct">✓</label>
+                <input type="checkbox" id="handover_incorrect"> <label for="handover_incorrect">✗</label>
+                <label for="handover">Take all handover with written from day shift employee.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="guest_management_correct"> <label for="guest_management_correct">✓</label>
+                <input type="checkbox" id="guest_management_incorrect"> <label for="guest_management_incorrect">✗</label>
+                <label for="guest_management">Do the guest management on IDS.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="room_rates_correct"> <label for="room_rates_correct">✓</label>
+                <input type="checkbox" id="room_rates_incorrect"> <label for="room_rates_incorrect">✗</label>
+                <label for="room_rates">Recheck the entered room rates. If there are any incorrect rates, correct them for the day.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="guest_database_correct"> <label for="guest_database_correct">✓</label>
+                <input type="checkbox" id="guest_database_incorrect"> <label for="guest_database_incorrect">✗</label>
+                <label for="guest_database">Make today's arrivals guest database on a daily basis.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="pending_arrivals_correct"> <label for="pending_arrivals_correct">✓</label>
+                <input type="checkbox" id="pending_arrivals_incorrect"> <label for="pending_arrivals_incorrect">✗</label>
+                <label for="pending_arrivals">Check-in the pending arrivals.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="tomorrow_departures_correct"> <label for="tomorrow_departures_correct">✓</label>
+                <input type="checkbox" id="tomorrow_departures_incorrect"> <label for="tomorrow_departures_incorrect">✗</label>
+                <label for="tomorrow_departures">Make the tomorrow departure & arrivals, rooms allocation Excel sheet and send to the WhatsApp group.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="room_allocation_correct"> <label for="room_allocation_correct">✓</label>
+                <input type="checkbox" id="room_allocation_incorrect"> <label for="room_allocation_incorrect">✗</label>
+                <label for="room_allocation">Check the tomorrow arrivals and do room allocation.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="vvip_guest_correct"> <label for="vvip_guest_correct">✓</label>
+                <input type="checkbox" id="vvip_guest_incorrect"> <label for="vvip_guest_incorrect">✗</label>
+                <label for="vvip_guest">Check if any VVIP guest arriving tomorrow.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="wakeup_calls_correct"> <label for="wakeup_calls_correct">✓</label>
+                <input type="checkbox" id="wakeup_calls_incorrect"> <label for="wakeup_calls_incorrect">✗</label>
+                <label for="wakeup_calls">Ask guide team if any wakeup calls for tomorrow morning.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="fb_bills_correct"> <label for="fb_bills_correct">✓</label>
+                <input type="checkbox" id="fb_bills_incorrect"> <label for="fb_bills_incorrect">✗</label>
+                <label for="fb_bills">Place the F&B bills in correct folio and check the guest signature on F&B bill.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="pending_bills_correct"> <label for="pending_bills_correct">✓</label>
+                <input type="checkbox" id="pending_bills_incorrect"> <label for="pending_bills_incorrect">✗</label>
+                <label for="pending_bills">Make the pending bills for spa, activities, souvenir shop & laundry, etc.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="close_souvenir_shop_correct"> <label for="close_souvenir_shop_correct">✓</label>
+                <input type="checkbox" id="close_souvenir_shop_incorrect"> <label for="close_souvenir_shop_incorrect">✗</label>
+                <label for="close_souvenir_shop">Close souvenir shop door after 10 PM.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="close_lights_correct"> <label for="close_lights_correct">✓</label>
+                <input type="checkbox" id="close_lights_incorrect"> <label for="close_lights_incorrect">✗</label>
+                <label for="close_lights">Close some unneeded lights after 10 PM.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="check_cleanliness_correct"> <label for="check_cleanliness_correct">✓</label>
+                <input type="checkbox" id="check_cleanliness_incorrect"> <label for="check_cleanliness_incorrect">✗</label>
+                <label for="check_cleanliness">Check daily if lobby areas, front desk areas, and souvenir shop areas are clean or not.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="check_fireplace_correct"> <label for="check_fireplace_correct">✓</label>
+                <input type="checkbox" id="check_fireplace_incorrect"> <label for="check_fireplace_incorrect">✗</label>
+                <label for="check_fireplace">Check the fireplace area and set the cousins in their place.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="check_keys_correct"> <label for="check_keys_correct">✓</label>
+                <input type="checkbox" id="check_keys_incorrect"> <label for="check_keys_incorrect">✗</label>
+                <label for="check_keys">Check all the important keys of the hotel.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="confirm_transport_correct"> <label for="confirm_transport_correct">✓</label>
+                <input type="checkbox" id="confirm_transport_incorrect"> <label for="confirm_transport_incorrect">✗</label>
+                <label for="confirm_transport">Confirm the departure vehicle for tomorrow morning departure guests.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="check_performance_correct"> <label for="check_performance_correct">✓</label>
+                <input type="checkbox" id="check_performance_incorrect"> <label for="check_performance_incorrect">✗</label>
+                <label for="check_performance">Check the past day PMS performance.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="update_rooms_correct"> <label for="update_rooms_correct">✓</label>
+                <input type="checkbox" id="update_rooms_incorrect"> <label for="update_rooms_incorrect">✗</label>
+                <label for="update_rooms">Update all the rooms in IDS and make a proper room management update.</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="final_report_correct"> <label for="final_report_correct">✓</label>
+                <input type="checkbox" id="final_report_incorrect"> <label for="final_report_incorrect">✗</label>
+                <label for="final_report">Make the night report and send it to the WhatsApp group before 12 PM with a sweet message.</label>
+            </div>
+        </div>
+
+        <div class="remarks">
+            <label for="remarks">Remarks:</label>
+            <textarea id="remarks" rows="4" cols="50"></textarea>
+        </div>
+
+        <div class="handover-section">
+            <div>
+                <label for="handover_by">Handover By:</label>
+                <input type="text" id="handover_by">
+            </div>
+            <div>
+                <label for="takeover_by">Takeover By:</label>
+                <input type="text" id="takeover_by">
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="saveImage">Save as JPEG</button>
+        </div>
+
+        <div class="footer">
+            © 2024 Kasara Jungle Resort
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var now = new Date();
+            var date = now.getDate() + "/" + (now.getMonth() + 1) + "/" + now.getFullYear();
+            var time = now.getHours() + ":" + now.getMinutes();
+            document.getElementById('date').value = date;
+            document.getElementById('time').value = time;
+
+            document.getElementById('saveImage').addEventListener('click', function() {
+                html2canvas(document.querySelector("#capture-area")).then(canvas => {
+                    var link = document.createElement('a');
+                    var fileName = 'night_shift_checklist_' + date.replace(/\//g, '-') + '_' + time.replace(/:/g, '-') + '.jpg';
+                    link.download = fileName;
+                    link.href = canvas.toDataURL('image/jpeg');
+                    link.click();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

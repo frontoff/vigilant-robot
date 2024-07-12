@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Inspection Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            background-color: #e6ffe6;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 10px;
+        }
+        .top-section, .footer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .top-section label, .footer-section label {
+            margin-top: 5px;
+        }
+        .checklist {
+            margin-top: 20px;
+        }
+        .checklist h3 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .checklist div {
+            margin-bottom: 10px;
+        }
+        .actions {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .actions button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .actions button:hover {
+            background-color: #45a049;
+        }
+        .remarks {
+            margin-top: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+        }
+        @media (min-width: 600px) {
+            .top-section, .footer-section {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="capture-area">
+
+        <h1>Kasara Jungle Resort</h1>
+        <h2>Room Inspection Report</h2>
+
+        <div class="top-section">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="date">Date:</label>
+                <input type="text" id="date" readonly>
+            </div>
+            <div>
+                <label for="time">Time:</label>
+                <input type="text" id="time" readonly>
+            </div>
+            <div>
+                <label for="room">Room Number:</label>
+                <input type="text" id="room">
+            </div>
+        </div>
+
+        <div class="checklist">
+            <h3>Entrance</h3>
+            <div>
+                <input type="checkbox" id="entrance1_correct"> <label for="entrance1_correct">✓</label>
+                <input type="checkbox" id="entrance1_incorrect"> <label for="entrance1_incorrect">✗</label>
+                <label for="entrance1">Ensure the door functions properly and is free from damage.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="entrance2_correct"> <label for="entrance2_correct">✓</label>
+                <input type="checkbox" id="entrance2_incorrect"> <label for="entrance2_incorrect">✗</label>
+                <label for="entrance2">Check the lock and security features.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="entrance3_correct"> <label for="entrance3_correct">✓</label>
+                <input type="checkbox" id="entrance3_incorrect"> <label for="entrance3_incorrect">✗</label>
+                <label for="entrance3">Inspect the small pond and wooden bridge for cleanliness and maintenance.</label>
+            </div>
+
+            <h3>Sitting Area</h3>
+            <div>
+                <input type="checkbox" id="sitting1_correct"> <label for="sitting1_correct">✓</label>
+                <input type="checkbox" id="sitting1_incorrect"> <label for="sitting1_incorrect">✗</label>
+                <label for="sitting1">Ensure the sofa is clean and free of damage.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="sitting2_correct"> <label for="sitting2_correct">✓</label>
+                <input type="checkbox" id="sitting2_incorrect"> <label for="sitting2_incorrect">✗</label>
+                <label for="sitting2">Check for dust and cleanliness around the sitting area.</label>
+            </div>
+
+            <h3>Bathroom</h3>
+            <div>
+                <input type="checkbox" id="bathroom1_correct"> <label for="bathroom1_correct">✓</label>
+                <input type="checkbox" id="bathroom1_incorrect"> <label for="bathroom1_incorrect">✗</label>
+                <label for="bathroom1">Inspect for cleanliness and functioning fixtures.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bathroom2_correct"> <label for="bathroom2_correct">✓</label>
+                <input type="checkbox" id="bathroom2_incorrect"> <label for="bathroom2_incorrect">✗</label>
+                <label for="bathroom2">Ensure the availability of amenities (shampoo, conditioner, body wash, soap, Brush).</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bathroom3_correct"> <label for="bathroom3_correct">✓</label>
+                <input type="checkbox" id="bathroom3_incorrect"> <label for="bathroom3_incorrect">✗</label>
+                <label for="bathroom3">Verify towels (Face towels, Hand Towels, Bath towel) are clean, properly folded, and adequate in number.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bathroom4_correct"> <label for="bathroom4_correct">✓</label>
+                <input type="checkbox" id="bathroom4_incorrect"> <label for="bathroom4_incorrect">✗</label>
+                <label for="bathroom4">Check for hot water and proper drainage in the shower/bathtub.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bathroom5_correct"> <label for="bathroom5_correct">✓</label>
+                <input type="checkbox" id="bathroom5_incorrect"> <label for="bathroom5_incorrect">✗</label>
+                <label for="bathroom5">Ensure the toilet is clean and functional.</label>
+            </div>
+
+            <h3>Bedroom</h3>
+            <div>
+                <input type="checkbox" id="bedroom1_correct"> <label for="bedroom1_correct">✓</label>
+                <input type="checkbox" id="bedroom1_incorrect"> <label for="bedroom1_incorrect">✗</label>
+                <label for="bedroom1">Ensure the room is clean and free from dust.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom2_correct"> <label for="bedroom2_correct">✓</label>
+                <input type="checkbox" id="bedroom2_incorrect"> <label for="bedroom2_incorrect">✗</label>
+                <label for="bedroom2">Verify the natural fiber mat on the floor is clean and undamaged.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom3_correct"> <label for="bedroom3_correct">✓</label>
+                <input type="checkbox" id="bedroom3_incorrect"> <label for="bedroom3_incorrect">✗</label>
+                <label for="bedroom3">Ensure the window opens and closes properly, and the glass is clean.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom4_correct"> <label for="bedroom4_correct">✓</label>
+                <input type="checkbox" id="bedroom4_incorrect"> <label for="bedroom4_incorrect">✗</label>
+                <label for="bedroom4">Check for cleanliness and proper making of the bed.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom5_correct"> <label for="bedroom5_correct">✓</label>
+                <input type="checkbox" id="bedroom5_incorrect"> <label for="bedroom5_incorrect">✗</label>
+                <label for="bedroom5">Verify the mattress and linens are undamaged.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom6_correct"> <label for="bedroom6_correct">✓</label>
+                <input type="checkbox" id="bedroom6_incorrect"> <label for="bedroom6_incorrect">✗</label>
+                <label for="bedroom6">Ensure the tea/coffee maker on the reading table is clean and functional.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom7_correct"> <label for="bedroom7_correct">✓</label>
+                <input type="checkbox" id="bedroom7_incorrect"> <label for="bedroom7_incorrect">✗</label>
+                <label for="bedroom7">Verify the availability of a notepad, pen, and welcome letter on the reading table.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom8_correct"> <label for="bedroom8_correct">✓</label>
+                <input type="checkbox" id="bedroom8_incorrect"> <label for="bedroom8_incorrect">✗</label>
+                <label for="bedroom8">Ensure the air conditioning is functioning properly.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom9_correct"> <label for="bedroom9_correct">✓</label>
+                <input type="checkbox" id="bedroom9_incorrect"> <label for="bedroom9_incorrect">✗</label>
+                <label for="bedroom9">Verify all lights in the bedroom are operational.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom10_correct"> <label for="bedroom10_correct">✓</label>
+                <input type="checkbox" id="bedroom10_incorrect"> <label for="bedroom10_incorrect">✗</label>
+                <label for="bedroom10">Ensure the bedside table light works.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom11_correct"> <label for="bedroom11_correct">✓</label>
+                <input type="checkbox" id="bedroom11_incorrect"> <label for="bedroom11_incorrect">✗</label>
+                <label for="bedroom11">Ensure mosquito repellent and All Out device are present and functional.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom12_correct"> <label for="bedroom12_correct">✓</label>
+                <input type="checkbox" id="bedroom12_incorrect"> <label for="bedroom12_incorrect">✗</label>
+                <label for="bedroom12">Check the availability of two water bottles with cups and glasses.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom13_correct"> <label for="bedroom13_correct">✓</label>
+                <input type="checkbox" id="bedroom13_incorrect"> <label for="bedroom13_incorrect">✗</label>
+                <label for="bedroom13">Verify the availability and condition of an umbrella, two pairs of slippers, bathrobe, and hangers inside the closet.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom14_correct"> <label for="bedroom14_correct">✓</label>
+                <input type="checkbox" id="bedroom14_incorrect"> <label for="bedroom14_incorrect">✗</label>
+                <label for="bedroom14">Ensure the closet is clean and organized.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="bedroom15_correct"> <label for="bedroom15_correct">✓</label>
+                <input type="checkbox" id="bedroom15_incorrect"> <label for="bedroom15_incorrect">✗</label>
+                <label for="bedroom15">Ensure the telephone is functional and properly placed beside the bed.</label>
+            </div>
+
+            <h3>Final Inspection</h3>
+            <div>
+                <input type="checkbox" id="final1_correct"> <label for="final1_correct">✓</label>
+                <input type="checkbox" id="final1_incorrect"> <label for="final1_incorrect">✗</label>
+                <label for="final1">Confirm the overall cleanliness and readiness of the room and Rooms Floor.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="final2_correct"> <label for="final2_correct">✓</label>
+                <input type="checkbox" id="final2_incorrect"> <label for="final2_incorrect">✗</label>
+                <label for="final2">Ensure the room has a pleasant fragrance.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="final3_correct"> <label for="final3_correct">✓</label>
+                <input type="checkbox" id="final3_incorrect"> <label for="final3_incorrect">✗</label>
+                <label for="final3">Report any maintenance issues immediately and ensure repairs are completed promptly.</label>
+            </div>
+        </div>
+
+        <div class="remarks">
+            <label for="remarks">Remarks:</label>
+            <textarea id="remarks" rows="4" style="width:100%;"></textarea>
+        </div>
+
+    </div>
+
+    <div class="actions">
+        <button onclick="generateJPEG()">Generate JPEG</button>
+        <button onclick="clearAll()">Clear All</button>
+    </div>
+
+    <div class="footer-section">
+        <div>Designed by Nishan</div>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentDate = new Date();
+            const formattedDate = currentDate.toISOString().slice(0, 10);
+            const formattedTime = currentDate.toTimeString().slice(0, 5);
+
+            document.getElementById('date').value = formattedDate;
+            document.getElementById('time').value = formattedTime;
+        });
+
+        async function generateJPEG() {
+            const element = document.getElementById('capture-area');
+            const canvas = await html2canvas(element, { scale: 2 });
+            const imgData = canvas.toDataURL('image/jpeg', 1.0);
+
+            const roomNumber = document.getElementById('room').value;
+            const date = document.getElementById('date').value;
+            const fileName = `Room_Inspection_Report_${roomNumber}_${date}.jpg`;
+
+            const link = document.createElement('a');
+            link.href = imgData;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function clearAll() {
+            document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
+            document.getElementById('remarks').value = '';
+        }
+    </script>
+</body>
+</html>

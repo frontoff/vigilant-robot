@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Opening Checklist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            background-color: #e6ffe6;
+            color: #333;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 10px;
+        }
+        .top-section, .footer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .top-section label, .footer-section label {
+            margin-top: 5px;
+        }
+        .top-section input, .footer-section input {
+            width: 100%;
+            margin-top: 5px;
+        }
+        .checklist {
+            margin-top: 20px;
+        }
+        .checklist h3 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .checklist div {
+            margin-bottom: 10px;
+        }
+        .actions {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .actions button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .actions button:hover {
+            background-color: #45a049;
+        }
+        .remarks {
+            margin-top: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+            z-index: -1;
+            font-size: 50px;
+            color: #ccc;
+        }
+        @media (min-width: 600px) {
+            .top-section, .footer-section {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .top-section input, .footer-section input {
+                width: auto;
+                flex: 1;
+                margin-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="capture-area">
+        <h1>Kasara Jungle Resort</h1>
+        <h2>Restaurant Opening Checklist</h2>
+
+        <div class="watermark">🍴</div>
+
+        <div class="top-section">
+            <div>
+                <label for="name">Prepared By:</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="date">Date:</label>
+                <input type="text" id="date" readonly>
+            </div>
+            <div>
+                <label for="time">Time:</label>
+                <input type="text" id="time" readonly>
+            </div>
+            <div>
+                <label for="restaurant">Restaurant Name:</label>
+                <input type="text" id="restaurant">
+            </div>
+        </div>
+
+       <div class="checklist">
+           <div class="checklist">
+    <div>
+        <input type="checkbox" id="task1_correct"> <label for="task1_correct">✓</label>
+        <input type="checkbox" id="task1_incorrect"> <label for="task1_incorrect">✗</label>
+        <label for="task1">Turn on the lights and fan (if required).</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task2_correct"> <label for="task2_correct">✓</label>
+        <input type="checkbox" id="task2_incorrect"> <label for="task2_incorrect">✗</label>
+        <label for="task2">Check and update guest information from the in-house report.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task3_correct"> <label for="task3_correct">✓</label>
+        <input type="checkbox" id="task3_incorrect"> <label for="task3_incorrect">✗</label>
+        <label for="task3">Turn on the coffee machine, refill coffee beans, refill tea bags, prepare milk, and refill the coffee cups.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task4_correct"> <label for="task4_correct">✓</label>
+        <input type="checkbox" id="task4_incorrect"> <label for="task4_incorrect">✗</label>
+        <label for="task4">Check table setup for breakfast standard, refill sugar bowl, salt, and pepper, and other items if required.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task5_correct"> <label for="task5_correct">✓</label>
+        <input type="checkbox" id="task5_incorrect"> <label for="task5_incorrect">✗</label>
+        <label for="task5">Check all the chafing dishes are working and the name tags are correct as per the food.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task6_correct"> <label for="task6_correct">✓</label>
+        <input type="checkbox" id="task6_incorrect"> <label for="task6_incorrect">✗</label>
+        <label for="task6">Check the cleanliness of the entire restaurant and toilet, ask housekeeping for help if any area needs to be cleaned.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task7_correct"> <label for="task7_correct">✓</label>
+        <input type="checkbox" id="task7_incorrect"> <label for="task7_incorrect">✗</label>
+        <label for="task7">Check all outside restaurant areas, pool areas, bar, and make the areas ready for breakfast.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task8_correct"> <label for="task8_correct">✓</label>
+        <input type="checkbox" id="task8_incorrect"> <label for="task8_incorrect">✗</label>
+        <label for="task8">Check all the coffee machines are ready and refilled with water for operations.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task9_correct"> <label for="task9_correct">✓</label>
+        <input type="checkbox" id="task9_incorrect"> <label for="task9_incorrect">✗</label>
+        <label for="task9">Set up a water station.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task10_correct"> <label for="task10_correct">✓</label>
+        <input type="checkbox" id="task10_incorrect"> <label for="task10_incorrect">✗</label>
+        <label for="task10">Prepare dusters for cleaning tables.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task11_correct"> <label for="task11_correct">✓</label>
+        <input type="checkbox" id="task11_incorrect"> <label for="task11_incorrect">✗</label>
+        <label for="task11">Prepare extra cutlery for table setup for inside and outside restaurants and bar areas.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task12_correct"> <label for="task12_correct">✓</label>
+        <input type="checkbox" id="task12_incorrect"> <label for="task12_incorrect">✗</label>
+        <label for="task12">Fold additional napkins for future service.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task13_correct"> <label for="task13_correct">✓</label>
+        <input type="checkbox" id="task13_incorrect"> <label for="task13_incorrect">✗</label>
+        <label for="task13">Ensure the POS (IDS) system is working properly.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task14_correct"> <label for="task14_correct">✓</label>
+        <input type="checkbox" id="task14_incorrect"> <label for="task14_incorrect">✗</label>
+        <label for="task14">Check the arrivals list and prepare the arrival drinks.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task15_correct"> <label for="task15_correct">✓</label>
+        <input type="checkbox" id="task15_incorrect"> <label for="task15_incorrect">✗</label>
+        <label for="task15">Check the cleanliness of the bar area, ask housekeeping for help if any area needs to be cleaned.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task16_correct"> <label for="task16_correct">✓</label>
+        <input type="checkbox" id="task16_incorrect"> <label for="task16_incorrect">✗</label>
+        <label for="task16">Display all the alcoholic beverages as per SOPs.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task17_correct"> <label for="task17_correct">✓</label>
+        <input type="checkbox" id="task17_incorrect"> <label for="task17_incorrect">✗</label>
+        <label for="task17">Layout all the chairs of the bar for guest use.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task18_correct"> <label for="task18_correct">✓</label>
+        <input type="checkbox" id="task18_incorrect"> <label for="task18_incorrect">✗</label>
+        <label for="task18">Check the ice machine.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task19_correct"> <label for="task19_correct">✓</label>
+        <input type="checkbox" id="task19_incorrect"> <label for="task19_incorrect">✗</label>
+        <label for="task19">Check all the fridges in the bars and refill with the required beverages if necessary.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task20_correct"> <label for="task20_correct">✓</label>
+        <input type="checkbox" id="task20_incorrect"> <label for="task20_incorrect">✗</label>
+        <label for="task20">Check the beverage inventory logbook, update as per sales, and make requisition.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task21_correct"> <label for="task21_correct">✓</label>
+        <input type="checkbox" id="task21_incorrect"> <label for="task21_incorrect">✗</label>
+        <label for="task21">Take care of the guests during breakfast service.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task22_correct"> <label for="task22_correct">✓</label>
+        <input type="checkbox" id="task22_incorrect"> <label for="task22_incorrect">✗</label>
+        <label for="task22">Once breakfast finishes, break down the breakfast buffet, clean all areas and chafing dishes, and make ready for the next meal.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task23_correct"> <label for="task23_correct">✓</label>
+        <input type="checkbox" id="task23_incorrect"> <label for="task23_incorrect">✗</label>
+        <label for="task23">Change the table setup from breakfast to lunch.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task24_correct"> <label for="task24_correct">✓</label>
+        <input type="checkbox" id="task24_incorrect"> <label for="task24_incorrect">✗</label>
+        <label for="task24">Clean all the tables and chairs outside and make them ready for the next meal.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task25_correct"> <label for="task25_correct">✓</label>
+        <input type="checkbox" id="task25_incorrect"> <label for="task25_incorrect">✗</label>
+        <label for="task25">Check with the kitchen team for special dishes of the day.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task26_correct"> <label for="task26_correct">✓</label>
+        <input type="checkbox" id="task26_incorrect"> <label for="task26_incorrect">✗</label>
+        <label for="task26">Set up the water station for lunch operation.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task27_correct"> <label for="task27_correct">✓</label>
+        <input type="checkbox" id="task27_incorrect"> <label for="task27_incorrect">✗</label>
+        <label for="task27">Take care of the lunch station until the afternoon shift arrives.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task28_correct"> <label for="task28_correct">✓</label>
+        <input type="checkbox" id="task28_incorrect"> <label for="task28_incorrect">✗</label>
+        <label for="task28">Polish all used cutlery and glassware and keep them back in place.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task29_correct"> <label for="task29_correct">✓</label>
+        <input type="checkbox" id="task29_incorrect"> <label for="task29_incorrect">✗</label>
+        <label for="task29">Count the cash and update it in the cash logbook.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="task30_correct"> <label for="task30_correct">✓</label>
+        <input type="checkbox" id="task30_incorrect"> <label for="task30_incorrect">✗</label>
+        <label for="task30">Brief the afternoon shift about breakfast and lunch operations, and give a proper handover regarding drinks and beverages left in the restaurant.</label>
+    </div>
+        </div>
+
+        <div class="remarks">
+            <label for="remarks">Remarks:</label>
+            <textarea id="remarks" rows="4" style="width:100%;"></textarea>
+        </div>
+
+        <div class="footer-section">
+            <div>
+                <label for="handover_by">Handover By:</label>
+                <input type="text" id="handover_by">
+            </div>
+            <div>
+                <label for="handover_to">Handover To:</label>
+                <input type="text" id="handover_to">
+            </div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button onclick="generateJPEG()">Generate JPEG</button>
+        <button onclick="clearAll()">Clear All</button>
+    </div>
+
+    <div class="footer">
+        Designed by Nishan
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentDate = new Date();
+            const formattedDate = currentDate.toISOString().slice(0, 10);
+            const formattedTime = currentDate.toTimeString().slice(0, 5);
+
+            document.getElementById('date').value = formattedDate;
+            document.getElementById('time').value = formattedTime;
+        });
+
+        async function generateJPEG() {
+            const element = document.getElementById('capture-area');
+            const canvas = await html2canvas(element, { scale: 2 });
+            const imgData = canvas.toDataURL('image/jpeg', 1.0);
+
+            const outletName = document.getElementById('restaurant').value.replace(/\s+/g, '_');
+            const date = document.getElementById('date').value.replace(/-/g, '_');
+            const fileName = `Outlet_Opening_Checklist_${outletName}_${date}.jpg`;
+
+            const link = document.createElement('a');
+            link.href = imgData;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function clearAll() {
+            document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
+            document.getElementById('remarks').value = '';
+            document.getElementById('handover_by').value = '';
+            document.getElementById('handover_to').value = '';
+        }
+    </script>
+</body>
+</html>

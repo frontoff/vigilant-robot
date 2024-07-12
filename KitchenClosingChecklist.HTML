@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Closing Checklist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            background-color: #e6ffe6;
+            color: #333;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 10px;
+        }
+        .top-section, .footer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .top-section label, .footer-section label {
+            margin-top: 5px;
+        }
+        .top-section input, .footer-section input {
+            width: 100%;
+            margin-top: 5px;
+        }
+        .checklist {
+            margin-top: 20px;
+        }
+        .checklist h3 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .checklist div {
+            margin-bottom: 10px;
+        }
+        .actions {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .actions button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .actions button:hover {
+            background-color: #45a049;
+        }
+        .remarks {
+            margin-top: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 12px;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+            z-index: -1;
+            font-size: 50px;
+            color: #ccc;
+        }
+        @media (min-width: 600px) {
+            .top-section, .footer-section {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .top-section input, .footer-section input {
+                width: auto;
+                flex: 1;
+                margin-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="capture-area">
+        <h1>Kasara Jungle Resort</h1>
+        <h2>Kitchen Closing Checklist</h2>
+
+        <div class="watermark">🍴</div>
+
+        <div class="top-section">
+            <div>
+                <label for="name">Prepared By:</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="date">Date:</label>
+                <input type="text" id="date" readonly>
+            </div>
+            <div>
+                <label for="time">Time:</label>
+                <input type="text" id="time" readonly>
+            </div>
+        </div>
+
+        <div class="checklist">
+            <div>
+                <input type="checkbox" id="task1_correct"> <label for="task1_correct">✓</label>
+                <input type="checkbox" id="task1_incorrect"> <label for="task1_incorrect">✗</label>
+                <label for="task1">Check the buffet area, chafing dishes, fuel, and decorations.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="task2_correct"> <label for="task2_correct">✓</label>
+                <input type="checkbox" id="task2_incorrect"> <label for="task2_incorrect">✗</label>
+                <label for="task2">Review the à la carte mise-en-place.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="task3_correct"> <label for="task3_correct">✓</label>
+                <input type="checkbox" id="task3_incorrect"> <label for="task3_incorrect">✗</label>
+                <label for="task3">Plan for the buffet dinner menu accordingly.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="task4_correct"> <label for="task4_correct">✓</label>
+                <input type="checkbox" id="task4_incorrect"> <label for="task4_incorrect">✗</label>
+                <label for="task4">Requisition necessary daily goods as per requirements.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="task5_correct"> <label for="task5_correct">✓</label>
+                <input type="checkbox" id="task5_incorrect"> <label for="task5_incorrect">✗</label>
+                <label for="task5"> Ensure dinner buffet is prepared and double-checked on time.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="task6_correct"> <label for="task6_correct">✓</label>
+                <input type="checkbox" id="task6_incorrect"> <label for="task6_incorrect">✗</label>
+                <label for="task6">Monitor and refill buffet area food items as needed.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="task7_correct"> <label for="task7_correct">✓</label>
+                <input type="checkbox" id="task7_incorrect"> <label for="task7_incorrect">✗</label>
+                <label for="task7">Clear the buffet area.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="task8_correct"> <label for="task8_correct">✓</label>
+                <input type="checkbox" id="task8_incorrect"> <label for="task8_incorrect">✗</label>
+                <label for="task8">Store and freeze remaining goods.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="task9_correct"> <label for="task8_correct">✓</label>
+                <input type="checkbox" id="task9_incorrect"> <label for="task8_incorrect">✗</label>
+                <label for="task9">Plan the breakfast menu accordingly.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="task10_correct"> <label for="task8_correct">✓</label>
+                <input type="checkbox" id="task10_incorrect"> <label for="task8_incorrect">✗</label>
+                <label for="task10">Deep clean all kitchen and cold room areas.</label>
+            </div>
+            <div>
+                <input type="checkbox" id="task11_correct"> <label for="task8_correct">✓</label>
+                <input type="checkbox" id="task11_incorrect"> <label for="task8_incorrect">✗</label>
+                <label for="task11">Log any morning shift information in the logbook.</label>
+            </div>
+        </div>
+
+        <div class="remarks">
+            <label for="remarks">Remarks:</label>
+            <textarea id="remarks" rows="4" style="width:100%;"></textarea>
+        </div>
+
+        <div class="footer-section">
+            <div>
+                <label for="handover_by">Handover By:</label>
+                <input type="text" id="handover_by">
+            </div>
+            <div>
+                <label for="handover_to">Handover To:</label>
+                <input type="text" id="handover_to">
+            </div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button onclick="generateJPEG()">Generate JPEG</button>
+        <button onclick="clearAll()">Clear All</button>
+    </div>
+
+    <div class="footer">
+        Designed by Nishan
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentDate = new Date();
+            const formattedDate = currentDate.toISOString().slice(0, 10);
+            const formattedTime = currentDate.toTimeString().slice(0, 5);
+
+            document.getElementById('date').value = formattedDate;
+            document.getElementById('time').value = formattedTime;
+        });
+
+        async function generateJPEG() {
+            const element = document.getElementById('capture-area');
+            const canvas = await html2canvas(element, { scale: 2 });
+            const imgData = canvas.toDataURL('image/jpeg', 1.0);
+
+            const currentDate = new Date();
+            const formattedDate = currentDate.toISOString().slice(0, 10).replace(/-/g, '_');
+            const fileName = `Kitchen_Closing_Checklist_${formattedDate}.jpg`;
+
+            const link = document.createElement('a');
+            link.href = imgData;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function clearAll() {
+            document.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = false);
+            document.getElementById('remarks').value = '';
+            document.getElementById('handover_by').value = '';
+            document.getElementById('handover_to').value = '';
+        }
+    </script>
+</body>
+</html>
